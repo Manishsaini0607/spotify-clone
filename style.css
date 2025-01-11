@@ -15,22 +15,30 @@
 }
 
 body{
+    max-width: 1550px;
+    margin-inline: auto;
     background-color: black;
     color: white;
+    -webkit-user-select: none;  
+    -moz-user-select: none;     
+    -ms-user-select: none;      
+    user-select: none;          
 }
 
 
 .left{
+    height:98vh;
     width:25vw;
     padding-left:5px ;
     position: relative;
 }
     
 .right{
+    max-width: 1550px;
     width:75vw;
+    height: 98vh;
     position: relative;
     margin: 5px;
-    
 }
 
 .close{
@@ -40,16 +48,19 @@ body{
     display: none;
 }
 
+.home{
+    height: 20%;
+}
+
 .home  li { display: flex;
     width: 20px;
     list-style: none;
     gap: 15px;
     margin-top:15px ;
-
 }
 
 .library{
-    min-height: 80vh;
+    min-height: 80%;
     position: relative;
 }
 
@@ -61,6 +72,7 @@ body{
     padding-left: 12px;
     font-size: 15px;
 }
+
 .heading img {
    width: 25px;
 }
@@ -72,7 +84,6 @@ body{
     gap: 10px;
     position: absolute;
     bottom: 10px;
-
 }
 
 .footer a{
@@ -83,18 +94,18 @@ body{
     display: flex;
     justify-content: space-between;
      background-color: rgb(34,34,34);
-     ;
 }
 
 .header > *{
     padding :20px;
 }
 
-.menuCantaner{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+.home-2{
+    width: 40px;
+    background-color: black;
+    height: 40px;
+    border-radius: 50%;
+    padding: 7px;
 }
 
 .menu{
@@ -105,15 +116,18 @@ body{
 .spotify-playlists{
     padding: 10px;
 }
- .card-cantaner{
+
+ .card-container{
     display: flex ;
     gap:10px;
     flex-wrap: wrap;
     margin: 30px;
     max-height: 70vh;
     overflow-y: auto;
-
+    scrollbar-width: thin;
+    scrollbar-color: black transparent;
  }
+
 .card{
     width: 200px;
     padding: 10px;
@@ -122,15 +136,12 @@ body{
     position: relative;
     cursor: pointer;
     transition: all .5s;
-    
 }
 
 .card:hover {
     --a:1;
     background-color: #464444;
-    --b:80px;
-   
-   
+    --b:80px;   
  }
 
 .card > *{
@@ -140,22 +151,23 @@ body{
 .card img{
     object-fit: contain;
     width: 100%;
+    pointer-events: none;
 }
+
 .card p {
     font-size: 12px;
     color: rgb(202, 189, 189);;
 }
+
 .play{
     width:40px;
     position:absolute;
     bottom: var(--b);
     right: 15px;
     opacity: var(--a);
-    transition: all .5s ease-out;
-    
+    transition: all .5s ease-out;    
 }
  
-
 
 .singinbtn{
      font-size: 16px;
@@ -167,16 +179,17 @@ body{
      margin-right: 10px;
      font-weight: 600;
 }
+
 .singinbtn:hover{
-     font-size: 17px;
      cursor: pointer;
      color: white;
+     scale: 1.1;
 }
 
 .loginbtn{
       width: 85px;
       height: 45px;
-      background-color: white;
+      background-color: rgb(168, 161, 161);
       border-radius: 100px;
       border: none;
       font-size: 16px;
@@ -185,23 +198,24 @@ body{
 }
 
 .loginbtn:hover{
-    font-size: 17px;
     font-weight: 510;
+    scale: 1.1;
     cursor: pointer;
+    background-color: white;
 
 }
 
 .playbar{
-    background-color:rgba(0, 0, 0, 0.445);
-    width: 73vw;
-    height: 60px;
-     position: fixed;
-     bottom: 50px;
+    background-color: #252525;
+    width: 95%;
+    margin-inline:20px;
+    height: 70px;
+     position: absolute;
+     bottom: 40px;
      display: flex;
      justify-content: space-between;
      padding: 0 20px;
-     align-items: center;
-    
+     align-items: center;    
      border-radius: 30px;
      
 }
@@ -213,12 +227,11 @@ body{
 }
 
 
-
-
 .songslist{
     height: 400px;
     overflow: auto;
 }
+
 .library ol{
     padding: 0 10px;
     margin-top: 50px;
@@ -249,27 +262,25 @@ body{
     font-size: 12px;
 }
 
-.sceekbar{
-    height: 2px;
+.seekbar{
+    height: 4px;
     width: 95%;
   background-color:  white;
    position: absolute;
    bottom: 5px;
+   accent-color:red;
    border-radius: 10px;
    cursor: pointer;
-   
 }
 
-.circle{
-     height: 10px;
-     width: 10px;
-     border-radius: 5px;
-     background-color: white;
-     position:relative ;
-     bottom: 4px;
-     left: 0;
-     transition: left .5s ;
+.seekbar:hover{
+    height: 6px;
 }
+.volumebar{
+    accent-color:rgba(251, 255, 0, 0.822);
+    cursor: pointer;
+}
+
 
 
 
@@ -277,80 +288,88 @@ body{
 @media (max-width: 1300px) {
    .left{
     position: absolute;
-    left: -100%;
+    left: -200%;
     z-index: 1;
     transition: all .3s ;
     width: 320px;
-  
-  
    }
+
    .right{
     width:100vw;
     height: 98vh;
    }
-   .playbar{
-    width: 95vw;
+
+   .home-2{
+    display: none;
    }
+ 
    .menu{
     display: block;
    }
+
    .close{
-    display: block;
-   
+    display: block;   
    }
 
    .playbar{
-    width: 99vw;
+    background-color:rgba(0, 0, 0, 0.445);
    }
 }
 
+
 @media (max-width: 750px){
- 
-
-
-
-
-
-
-
-
          .playbar{
             height: 70px;
          }
       .song-info{
         font-size: 12px;
-        
       }
    
-    .sceekbar{
+    .seekbar{
         width: 90%;
     }
 
+    .song-info{
+        margin-top: 10px;
+    }
+
+    .timeVol{
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .playbar{
+        height: 130px;
+        margin-inline:5px ;
+        flex-direction: column;
+    }
     
 }
 
-@media (max-width: 500px)
 
-{
+@media (max-width: 500px) {
+
     .card-cantaner{
         justify-content: center;
         margin: 0;
         margin-top: 30px;
-        
     }
     .card{
         width: 90vw;
     }
 
-    .playbar{
-        height: 100px;
-        flex-direction: column;
+    .timeVol{
+        margin-bottom: 20px;
     }
+   
 
     .song-time{
         font-size: 12px;
-        margin-bottom: 10px;
-        
+       
+    }
+
+    .spotify-playlists {
+        padding: 0;
     }
 
     .song-info{
@@ -363,4 +382,29 @@ body{
 }
 
 
+
+@media (max-width: 330px){
+
+    .left{
+        width:90vw;
+       padding-left:0px;
+    }
+
+    .singinbtn{
+        font-size: 12px;
+        color:rgb(163, 153, 153);
+        width: 60px;
+        height: 35px;
+        margin-right: 8px;
+   }
+ 
+   
+   .loginbtn{
+         width: 70px;
+         height: 35px;
+         font-size: 12px;   
+   }
+
+
+}
 
