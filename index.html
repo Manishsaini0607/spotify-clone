@@ -6,6 +6,7 @@
     <title>Spotify-Clone</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./utility.css">
+    <script  src="./script.js" defer></script>
 </head>
 <body>
     <div class="container flex bg-black">
@@ -50,29 +51,46 @@
         </div>
 
         <div class="spotify-playlists">
-            <h1>Spotiry-playlists</h1>
+            <h1>Spotify-playlists</h1>
           <div class="card-container">
-            <div class="card ">
-                <div class="play"> <img src="./images/play.svg" alt="playbutton" class="invert"></div>
-                <img src="./images/Glory.jpeg">
+
+            <div data-folder="honeysingh" class="card ">
+                <img class="cover-img" src="./images/Glory.jpeg">
                 <h2>Glory</h2>
                 <p>
                     Yo Yo Honey Singh
                 </p>
+                 <img class="play" src="./images/play.svg" alt="playbutton" class="invert">
             </div>
 
-                <div class="card ">
-                    <div class="play"> <img src="./images/play.svg" alt="playbutton" class="invert"></div>
-                    <img src="./images/Glory.jpeg">
-                    <h2>Glory</h2>
+                <div data-folder="diljit" class="card ">
+                    <img class="cover-img" src="./images/diljit.jpeg">
+                    <h2>G.O.A.T</h2>
                     <p>
-                        Yo Yo Honey Singh
+                        Diljit Dosanjh
                     </p>
+                     <img class="play"  src="./images/play.svg" alt="playbutton" class="invert">
+              </div>
+
+              <div data-folder="badshah" class="card">
+                <img class="cover-img" src="./images/badshah.jpeg">
+                <h2>Bad Boy</h2>
+                <p>
+                    Badshah
+                </p>
+                 <img class="play" src="./images/play.svg" alt="playbutton" class="invert">
+              </div>
+
+              <div data-folder="jubin" class="card">
+                <img class="cover-img" src="./images/jubin.jpg">
+                <h2>Dil Galti</h2>
+                <p>
+                    Jubin Nautiyal
+                </p>
+                 <img class="play" src="./images/play.svg" alt="playbutton" class="invert">
               </div>
 
 
-
-    
           </div>
         </div>
         <div class="playbar">  
@@ -95,6 +113,6 @@
    
 </div>
 
-<script  src="./script.js"></script>
+
 </body>
 </html>
