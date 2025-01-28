@@ -143,7 +143,7 @@ body{
 .card:hover {
     --a:1;
     background-color: #464444;
-    --b:80px;   
+    --b:90px;   
  }
 
 .card > *{
@@ -151,7 +151,7 @@ body{
 }
 
 .card .cover-img {
-    object-fit: contain;
+    object-fit: cover;
    /* max-width: 180px;
    max-height: 190px; */
 width: 100%;
@@ -170,7 +170,7 @@ height: 75%;
     bottom: var(--b);
     right: 15px;
     opacity: var(--a);
-    transition: all .5s ease-out;    
+    transition: all .3s ease-out;    
 }
  
 

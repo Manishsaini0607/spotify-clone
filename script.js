@@ -25,6 +25,11 @@ function updateTime() {
         if (!currentSong.duration) return; 
     let progress = (currentSong.currentTime / currentSong.duration) * 100;
    seekbar.value = progress 
+   if(seekbar.value==100){
+    // playMusic(folder+"/"+document.querySelector(".song-info").innerHTML,true)
+    play.src="./images/playbtn.svg";
+   }
+   
 }
 
 
