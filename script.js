@@ -71,11 +71,13 @@ async function getSongs(folder){
              // load first and multiple time song
            if(firstload){
             playMusic(  `${folder}/${songs[0].split(`/${folder}/`)[1].replaceAll("%20"," ")}`,true)
+           
             play.src="./images/playbtn.svg";
            }else{
             playMusic(  `${folder}/${songs[0].split(`/${folder}/`)[1].replaceAll("%20"," ")}`,false)
             play.src="./images/pausedbtn.svg";
            }
+           console.log(songs[0])
 
 
 }
