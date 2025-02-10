@@ -83,7 +83,7 @@ body{
     font-size: 10px;
     gap: 10px;
     position: absolute;
-    bottom: 10px;
+    bottom: 12px;
 }
 
 .footer a{
@@ -285,7 +285,13 @@ height: 75%;
     accent-color:rgba(251, 255, 0, 0.822);
     cursor: pointer;
 }
-
+footer{
+    width: 100%;
+    position: fixed;
+    bottom: 8px;
+    text-align: center;
+    font-size: 14px;
+}
 
 
 
@@ -301,7 +307,7 @@ height: 75%;
 
    .right{
     width:100vw;
-    height: 98vh;
+    height: 100vh;
    }
 
    .home-2{

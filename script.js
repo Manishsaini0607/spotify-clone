@@ -76,8 +76,7 @@ async function getSongs(folder){
            }else{
             playMusic(  `${folder}/${songs[0].split(`/${folder}/`)[1].replaceAll("%20"," ")}`,false)
             play.src="./images/pausedbtn.svg";
-           }
-           console.log(songs[0])
+           } 
 
 
 }
@@ -111,7 +110,7 @@ async function main() {
                     play.addEventListener(("click"), ()=>{
                         if(currentSong.paused){
                             currentSong.play();
-                           console.log( currentSong.src)
+                          
                             play.src="./images/pausedbtn.svg";
                         }
                         else{ 
@@ -145,7 +144,7 @@ async function main() {
           // Add event listener to previousbtn 
           previous.addEventListener(("click"), ()=>{
             let index=songs.indexOf(currentSong.src);
-            console.log(songs[songs.length-1].split(`/${folder}/`)[1].replaceAll("%20"," "));
+          
             if(index===0){
                 if(currentSong.paused){
                     playMusic(songs[songs.length-1].split(`/${folder}/`)[1].replaceAll("%20"," "),true);
@@ -214,7 +213,7 @@ async function main() {
         document.querySelectorAll(".card").forEach(element => {    
             element.addEventListener(("click"),async()=>{
                 folder=element.getAttribute("data-folder");
-                console.log(folder)
+               
                 songsOL.innerHTML="";
                 firstload=false;
                  await getSongs(folder);
