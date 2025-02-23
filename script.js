@@ -78,7 +78,7 @@ async function getSongs(folder){
             play.src="./images/pausedbtn.svg";
            } 
 
-
+ return songs
 }
 
 const playMusic=(track,pause)=>{
@@ -86,15 +86,15 @@ const playMusic=(track,pause)=>{
     if(pause===false){currentSong.play();
         play.src="./images/pausedbtn.svg";
        }
-    document.querySelector(".song-info").innerHTML=(track.split(`${folder}/`)[1]);
+    document.querySelector(".song-info").innerHTML=(track.split(`${folder}/`)[1])
     currentSong.addEventListener('loadedmetadata',updateTime);
 }
 
-async function main() {
+ async function main() {
 
     // get the list of all songs 
    
-     await getSongs(folder);
+   let songs=  await getSongs(folder);
 
 
    
@@ -147,44 +147,46 @@ async function main() {
           
             if(index===0){
                 if(currentSong.paused){
-                    playMusic(songs[songs.length-1].split(`/${folder}/`)[1].replaceAll("%20"," "),true);
+                    playMusic(songs[songs.length-1].split('/songs/')[1].replaceAll("%20"," "),true);
                 }
                 else{
                 
-                    playMusic(songs[songs.length-1].split(`/${folder}/`)[1].replaceAll("%20"," "),false);
+                    playMusic(songs[songs.length-1].split('/songs/')[1].replaceAll("%20"," "),false);
                 }
             }
             else{
                if(currentSong.paused){
-                playMusic(songs[index-1].split(`/${folder}/`)[1].replaceAll("%20"," "),true);
+                playMusic(songs[index-1].split('/songs/')[1].replaceAll("%20"," "),true);
                }
                else{
                
-                playMusic(songs[index-1].split(`/${folder}/`)[1].replaceAll("%20"," "),false);
+                playMusic(songs[index-1].split('/songs/')[1].replaceAll("%20"," "),false);
                }
             }
           })
+          console.log(songs)
 
 
           // add event listener to nextbtn 
           next.addEventListener('click',()=>{
-          let index=songs.indexOf(currentSong.src);
+          let index =songs.indexOf(currentSong.src);
+         console.log( songs[0].split(`/${folder}/`)[1].replaceAll("%20"," "))
           if(index===songs.length-1){
             if(currentSong.paused){
-                playMusic(songs[0].split(`/${folder}/`)[1].replaceAll("%20"," "),true);
+                playMusic(songs[0].split('/songs/')[1].replaceAll("%20"," "),true);
             }
             else{
             
-                playMusic(songs[0].split(`/${folder}/`)[1].replaceAll("%20"," "),false);
+                playMusic(songs[0].split('/songs/')[1].replaceAll("%20"," "),false);
             }
           }
           else{
             if(currentSong.paused){
-                playMusic(songs[index+1].split(`/${folder}/`)[1].replaceAll("%20"," "),true);
+                playMusic(songs[index+1].split('/songs/')[1].replaceAll("%20"," "),true);
             }
             else{
             
-                playMusic(songs[index+1].split(`/${folder}/`)[1].replaceAll("%20"," "),false);
+                playMusic(songs[index+1].split('/songs/')[1].replaceAll("%20"," "),false);
             }
           }
           })
